@@ -4,8 +4,11 @@
         <title>JS Dangerous Tutorial</title>
         <meta charset="utf-8">
         <script>
-            alert("hellllllllloooooooo! again...");
-            console.log("a message from the console");
+            const dayOfWeek = [ "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            let now = new Date();
+            let day = dayOfWeek[now.getDay()];
+            alert(`Hello! Happy ${day}!`);
+            //bookmark: regular expressions, p. 97
         </script>
     </head>
     <body>
