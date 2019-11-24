@@ -3,16 +3,20 @@
     <head>
         <title>JS Dangerous Tutorial</title>
         <meta charset="utf-8">
-        <script>
-            const dayOfWeek = [ "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-            let now = new Date();
-            let day = dayOfWeek[now.getDay()];
-            alert(`Hello! Happy ${day}!`);
-            //bookmark: regular expressions, p. 97
-        </script>
+        <script src = "count.js"></script> 
+        <script src = "day.js"></script>
+        <script src ="hello.js"></script>
+        <script src ="palindrome.js"></script>
     </head>
     <body>
-        <h1>Hellllllooooooo!</h1>
-        <p>Javascript window alert ready</p>
-    </body>    
+        <h1>Hello!</h1><br>
+        <h3>Palindrome test!</h3>
+        <p><input type = "text" id = "pal"></p>
+        <p><input type= "submit" id = "btn" value = "?"></p>
+        <p id = "output"></p>
+        <script>                      
+             greeting();
+        </script>
+    </body>
+       
 </html>
