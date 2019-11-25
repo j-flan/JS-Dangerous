@@ -1,5 +1,5 @@
 function reverse(word){
-    return word.split("").reverse().join("");
+    return Array.from(word).reverse().join("");
 }
 
 function palindrome(){
@@ -10,9 +10,9 @@ function palindrome(){
     if (word){
         let s = reverse(word);      
         if(s === word)
-            answer.textContent = `${word} is a palindrome!`;
+            answer.textContent = `"${word}" is a palindrome!`;
         else
-            answer.textContent = `${word} is not a palindrome.`;
+            answer.textContent = `"${word}" is not a palindrome.`;
     }
     else
         answer.textContent = "Please enter some text";
