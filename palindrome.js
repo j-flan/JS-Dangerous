@@ -1,14 +1,21 @@
+function reverse(word){
+    return word.split("").reverse().join("");
+}
+
 function palindrome(){
-    let word = document.getElementById("pal").value;
-    let s = word.split("");
-    s.reverse();
-    s = s.join("");
-    if(s === word){
-        document.getElementById("output").textContent = "Palindrome found!";
+
+    let word = document.getElementById("pal").value.toLowerCase();
+    let answer = document.getElementById("output");
+    
+    if (word){
+        let s = reverse(word);      
+        if(s === word)
+            answer.textContent = `${word} is a palindrome!`;
+        else
+            answer.textContent = `${word} is not a palindrome.`;
     }
-    else{
-        document.getElementById("output").textContent = "not a palindrome";
-    }
+    else
+        answer.textContent = "Please enter some text";
 }
 
 function listener(){
