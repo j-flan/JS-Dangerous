@@ -15,7 +15,8 @@ let a = num.map( n => n * n);
 a.forEach(b => console.log(b));*/
 
 console.log("state-url conversion:\nBefore:");
-let states = ["Michigan","Colorado","West Virginia","South Carolina"];
+let states = ["Michigan","Colorado","North Carolina","South Carolina"];
+let states2 = states;
 
 console.log(states,"\nAfter:");
 let urlSafe = (index) =>{
@@ -33,3 +34,31 @@ let outPut = (arr) =>{
     arr.forEach(s => console.log(s));
 }
 outPut(states);
+
+console.log("Carolinas:");
+
+let carolinas = (states) =>{
+    return states.filter(state => state.split(/\s+/).length === 2);
+}
+let include = (states) =>{
+    let arr = [];
+    states.forEach((s) => {
+        if (s.includes('Carolina'))
+            arr.push(s);
+    });
+    return arr;
+}
+console.log(carolinas(states2));
+console.log(include(states2));
+
+let numbers = [1,3,55,30,25,87,55,41];
+console.log(`${numbers}\nSum:`);
+
+console.log(numbers.reduce((total, n) => {return total += n;}, 0));
+
+let lengths = (state) =>{
+    return state.reduce((length,state) => {
+                        length[state] = state.length;
+                        return length;},{});
+}
+console.log(lengths(states2));

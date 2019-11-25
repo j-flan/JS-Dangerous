@@ -1,24 +1,30 @@
+<?php
+    header("Cache-Control: no-cache, no-store, must-revalidate");
+    header("Content-Type: application/json");
+?>
 <!DOCTYPE html>
 <html>
     <head>
+        
         <title>JS Dangerous Tutorial</title>
         <meta charset="utf-8">
         <script src ="palindrome.js"></script>
         <script src = "count.js"></script> 
         <script src = "day.js"></script>
-        <script src ="hello.js"></script>
-        <script src = "foreach.js"></script>
+        
     </head>
     <body>
+        
         <h1>Hello!</h1><br>
         <h3>Palindrome test!</h3>
         <p><input type = "text" id = "pal"></p>
         <p><input type= "submit" id = "btn" value = "?"></p>
-        <p id = "output"></p>
+        <p id = "output"></p><br>
+        <p id = "con"></p>
         <script>                      
             greeting();
         </script>
-        
+    <script src = "foreach.js"></script>
     </body>
        
 </html>
