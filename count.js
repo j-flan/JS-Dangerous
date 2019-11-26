@@ -18,11 +18,6 @@ let words = sonnet.match(/\w+/g);
 
 for(var i = 0; i < words.length; ++i){
     let word = words[i];
-    if (uniques[word]){
-        uniques[word] += 1;
-    }
-    else{
-        uniques[word] = 1;
-    }
+    (uniques[word]) ? uniques[word] += 1 : uniques[word] = 1;
 }
 console.log(uniques);
