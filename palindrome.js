@@ -1,18 +1,33 @@
+
+
 function reverse(word){
     return Array.from(word).reverse().join("");
 }
 
-function palindrome(){
+function Phrase(content){
+    this.content = content.toLowerCase();
 
-    let word = document.getElementById("pal").value.toLowerCase();
+    this.louder = function(){
+        let s = this.content.toUpperCase();
+        return s;
+    }
+    this.palindrome = function palindrome(){
+        let p = reverse(this.content);
+        return p;
+    }   
+}
+
+function compare(){
+
+    let word = new Phrase(document.getElementById("pal").value);
     let answer = document.getElementById("output");
     
-    if (word){
-        let s = reverse(word);      
-        if(s === word)
-            answer.textContent = `"${word}" is a palindrome!`;
+    if (word.content){
+        let s = word.palindrome();
+        if(s === word.content)
+            answer.textContent = `"${word.louder()}" is a palindrome!`;
         else
-            answer.textContent = `"${word}" is not a palindrome.`;
+            answer.textContent = `"${word.content}" is not a palindrome.`;
     }
     else
         answer.textContent = "Please enter some text";
@@ -20,7 +35,7 @@ function palindrome(){
 
 function listener(){
     let btn = document.getElementById("btn");
-    btn.addEventListener("click", palindrome, false);
+    btn.addEventListener("click", compare, false);
 }
 
 window.addEventListener("load", listener, false);
