@@ -1,19 +1,18 @@
 
 
-function reverse(word){
-    return Array.from(word).reverse().join("");
+String.prototype.reverse = function(){
+    return Array.from(this).reverse().join("");
 }
 
 function Phrase(content){
     this.content = content.toLowerCase();
 
-    this.louder = function(){
-        let s = this.content.toUpperCase();
-        return s;
+    this.refine = function refine(){
+        return(this.content.match(/[a-z]/gi) || []).join("");
     }
-    this.palindrome = function palindrome(){
-        let p = reverse(this.content);
-        return p;
+    this.palindrome = function(){
+       return this.refine().reverse();
+
     }   
 }
 
@@ -23,9 +22,8 @@ function compare(){
     let answer = document.getElementById("output");
     
     if (word.content){
-        let s = word.palindrome();
-        if(s === word.content)
-            answer.textContent = `"${word.louder()}" is a palindrome!`;
+        if(word.palindrome() === word.refine())
+            answer.textContent = `"${word.content}" is a palindrome!`;
         else
             answer.textContent = `"${word.content}" is not a palindrome.`;
     }
